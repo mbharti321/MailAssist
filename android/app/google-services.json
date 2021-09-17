@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1009957009435",
+    "project_id": "email-assist-7b8e7",
+    "storage_bucket": "email-assist-7b8e7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1009957009435:android:5d51e7b855963848ab20be",
+        "android_client_info": {
+          "package_name": "com.example.emailassist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1009957009435-ictptnrpcpc3aa1qipulu26mil3jg8ko.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.emailassist",
+            "certificate_hash": "ca02fbaa09585d3b03760a33968a7c32a2fd34e8"
+          }
+        },
+        {
+          "client_id": "1009957009435-kconcf2pi9o4l5v1ha36d72qdjbb6021.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhm-2eQas9FzyESRgnW2JdBPCJD1vMmcI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1009957009435-kconcf2pi9o4l5v1ha36d72qdjbb6021.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
