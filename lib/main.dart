@@ -16,6 +16,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      home: new FirstScreen(),
+    );
+  }
+}
+
+class FirstScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
       title: 'Email Assist',
       //theme: new ThemeData(scaffoldBackgroundColor: const Color(0xFF42A5F5)),
       home: new Scaffold(
@@ -38,7 +47,15 @@ class MyApp extends StatelessWidget {
                   borderRadius: BorderRadius.circular(24.0),
                 ),
               ),
-              onPressed: () => signInWithGoogle(),
+              //onPressed: () => signInWithGoogle(),
+              onPressed: () {
+                signInWithGoogle();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyApp1()),
+                );
+              },
+
               icon: Icon(
                 Icons.send_rounded,
               ),
@@ -50,6 +67,12 @@ class MyApp extends StatelessWidget {
               label: Text(
                 'Sign in with Google',
               ),
+              // onPressed: () {
+              //   Navigator.push(
+              //     context,
+              //     MaterialPageRoute(builder: (context) => MyApp1()),
+              //   );
+              // },
             ),
             // child: TextButton(
             //   onPressed: () => signInWithGoogle(),
@@ -64,18 +87,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-Future<UserCredential> signInWithGoogle() async {
-  final GoogleSignInAccount googleuser = await GoogleSignIn().signIn();
-
-  final GoogleSignInAuthentication googleAuth = await googleuser.authentication;
-
-  final GoogleAuthCredential credential = GoogleAuthProvider.credential(
-      idToken: googleAuth.idToken, accessToken: googleAuth.accessToken);
-  Fluttertoast.showToast(msg: "Account created");
-
-  return await FirebaseAuth.instance.signInWithCredential(credential);
-}
-
 class MyApp1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -87,6 +98,18 @@ class MyApp1 extends StatelessWidget {
         home: new MyHomePage(),
         debugShowCheckedModeBanner: false);
   }
+}
+
+Future<UserCredential> signInWithGoogle() async {
+  final GoogleSignInAccount googleuser = await GoogleSignIn().signIn();
+
+  final GoogleSignInAuthentication googleAuth = await googleuser.authentication;
+
+  final GoogleAuthCredential credential = GoogleAuthProvider.credential(
+      idToken: googleAuth.idToken, accessToken: googleAuth.accessToken);
+  Fluttertoast.showToast(msg: "Account created");
+
+  return await FirebaseAuth.instance.signInWithCredential(credential);
 }
 
 class MyHomePage extends StatefulWidget {
